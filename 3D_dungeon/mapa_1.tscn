@@ -1,0 +1,103 @@
+[gd_scene load_steps=13 format=3 uid="uid://6kl6m7umiave"]
+
+[ext_resource type="PackedScene" uid="uid://dma00ivnxc7h4" path="res://knight.tscn" id="1_ycyui"]
+[ext_resource type="PackedScene" uid="uid://b7xfcdkcfurwq" path="res://KayKit_Assets/dungeon_gltf/wall.gltf.glb" id="2_n7n0x"]
+[ext_resource type="PackedScene" uid="uid://ft66qu67lfog" path="res://KayKit_Assets/dungeon_gltf/pillar.gltf.glb" id="3_7omtp"]
+[ext_resource type="Script" path="res://Area3D.cs" id="4_d8n3m"]
+[ext_resource type="PackedScene" uid="uid://t7r54yashvnl" path="res://KayKit_Assets/dungeon_gltf/coin_stack_small.gltf.glb" id="5_pva2q"]
+[ext_resource type="PackedScene" uid="uid://badswh5gqoawx" path="res://KayKit_Assets/dungeon_gltf/floor_foundation_allsides.gltf.glb" id="6_ob334"]
+[ext_resource type="PackedScene" uid="uid://chwrv70mutb1l" path="res://KayKit_Assets/dungeon_gltf/banner_blue.gltf.glb" id="7_qcjpg"]
+[ext_resource type="PackedScene" uid="uid://bybi4iywbc01u" path="res://KayKit_Assets/dungeon_gltf/coin_stack_large.gltf.glb" id="8_pyndb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kahor"]
+size = Vector3(20, 2, 40)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6qxrt"]
+size = Vector3(20, 2, 40)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gr4go"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fj3mj"]
+
+[node name="Mapa1" type="Node3D"]
+
+[node name="Chao" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -8.4602)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chao"]
+shape = SubResource("BoxShape3D_kahor")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chao"]
+mesh = SubResource("BoxMesh_6qxrt")
+
+[node name="Knight" parent="." instance=ExtResource("1_ycyui")]
+collision_layer = 1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.63334, -0.590898, 0.499719, -0.773873, -0.483593, 0.408972, 0, -0.645738, -0.763559, 16.4238, 11.9747, 3.50392)
+shadow_enabled = true
+
+[node name="wall_gltf" parent="." instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.32055, 0, -9.86319)
+visible = false
+
+[node name="pillar_gltf" parent="." instance=ExtResource("3_7omtp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.39598)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.8558)
+
+[node name="pillar_gltf2" parent="Node3D" instance=ExtResource("3_7omtp")]
+
+[node name="pillar_gltf3" parent="Node3D" instance=ExtResource("3_7omtp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.98867, 0)
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.1209)
+
+[node name="pillar_gltf2" parent="Node3D2" instance=ExtResource("3_7omtp")]
+
+[node name="pillar_gltf3" parent="Node3D2" instance=ExtResource("3_7omtp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.98867, 0)
+
+[node name="pillar_gltf4" parent="Node3D2" instance=ExtResource("3_7omtp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.80467, 0)
+
+[node name="pillar_gltf5" parent="Node3D2" instance=ExtResource("3_7omtp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.7486, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.379697, 16.5916, -33.7864)
+script = ExtResource("4_d8n3m")
+
+[node name="coin_stack_small_gltf" parent="Area3D" instance=ExtResource("5_pva2q")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_gr4go")
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5639, 0, -2.77054)
+script = ExtResource("4_d8n3m")
+
+[node name="coin_stack_small_gltf" parent="Area3D2" instance=ExtResource("5_pva2q")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+shape = SubResource("BoxShape3D_gr4go")
+
+[node name="floor_foundation_allsides_gltf" parent="." instance=ExtResource("6_ob334")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.5571, -33.4144)
+
+[node name="banner_blue_gltf" parent="." instance=ExtResource("7_qcjpg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.4116, -36.0258)
+
+[node name="Area3D3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.03251, 0, -4.09123)
+
+[node name="coin_stack_large_gltf" parent="Area3D3" instance=ExtResource("8_pyndb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
+shape = SubResource("BoxShape3D_fj3mj")
+
+[connection signal="body_entered" from="Area3D" to="Knight" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3D2" to="Knight" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3D3" to="Knight" method="_on_area_3d_3_body_entered_death"]
