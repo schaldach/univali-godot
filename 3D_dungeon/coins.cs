@@ -16,8 +16,9 @@ public partial class coins : Area3D
 	private void _on_body_entered(Node3D body)
 	{
 		if(body is knight){
-			coins.QueueFree();
-			body.coins += 10;
+			QueueFree();
+			var player = (knight)body;
+			player.add_coins(10);
 		}
 	}
 }

@@ -1,6 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://6kl6m7umiave"]
 
 [ext_resource type="PackedScene" uid="uid://dma00ivnxc7h4" path="res://knight.tscn" id="1_ycyui"]
+[ext_resource type="PackedScene" uid="uid://bne8k2tveilk3" path="res://KayKit_Assets/dungeon_gltf/floor_dirt_large.gltf.glb" id="2_88v8t"]
 [ext_resource type="PackedScene" uid="uid://b7xfcdkcfurwq" path="res://KayKit_Assets/dungeon_gltf/wall.gltf.glb" id="2_n7n0x"]
 [ext_resource type="PackedScene" uid="uid://ft66qu67lfog" path="res://KayKit_Assets/dungeon_gltf/pillar.gltf.glb" id="3_7omtp"]
 [ext_resource type="Script" path="res://coins2.cs" id="4_3ralx"]
@@ -8,28 +9,112 @@
 [ext_resource type="Script" path="res://coins.cs" id="6_h5s3l"]
 [ext_resource type="PackedScene" uid="uid://badswh5gqoawx" path="res://KayKit_Assets/dungeon_gltf/floor_foundation_allsides.gltf.glb" id="6_ob334"]
 [ext_resource type="PackedScene" uid="uid://chwrv70mutb1l" path="res://KayKit_Assets/dungeon_gltf/banner_blue.gltf.glb" id="7_qcjpg"]
-[ext_resource type="PackedScene" uid="uid://bybi4iywbc01u" path="res://KayKit_Assets/dungeon_gltf/coin_stack_large.gltf.glb" id="8_pyndb"]
+[ext_resource type="PackedScene" uid="uid://oj8ncn0aoy0w" path="res://KayKit_Assets/dungeon_gltf/floor_tile_big_spikes.glb" id="9_icl7d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kahor"]
-size = Vector3(20, 2, 40)
-
-[sub_resource type="BoxMesh" id="BoxMesh_6qxrt"]
-size = Vector3(20, 2, 40)
+size = Vector3(20, 0, 25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gr4go"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fj3mj"]
+size = Vector3(3, 1, 3)
 
 [node name="Mapa1" type="Node3D"]
 
+[node name="wall1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32697, 0, 4.28311)
+
+[node name="wall_gltf2" parent="wall1" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96859, 0, 0)
+
+[node name="wall_gltf6" parent="wall1" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4041, 0, 0)
+
+[node name="wall_gltf7" parent="wall1" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.61817, 0, 0)
+
+[node name="wall_gltf5" parent="wall1" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94773, 0, 0)
+
+[node name="wall_gltf4" parent="wall1" instance=ExtResource("2_n7n0x")]
+
+[node name="wall_gltf3" parent="wall1" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.83763, 0, 0)
+
+[node name="wall2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32697, 0, -20.5436)
+
+[node name="wall_gltf2" parent="wall2" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96859, 0, 0)
+
+[node name="wall_gltf6" parent="wall2" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4041, 0, 0)
+
+[node name="wall_gltf7" parent="wall2" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.61817, 0, 0)
+
+[node name="wall_gltf5" parent="wall2" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94773, 0, 0)
+
+[node name="wall_gltf4" parent="wall2" instance=ExtResource("2_n7n0x")]
+
+[node name="wall_gltf3" parent="wall2" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.83763, 0, 0)
+
+[node name="wall3" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.65347, 0, -7.97006)
+
+[node name="wall_gltf2" parent="wall3" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96859, 0, 0)
+
+[node name="wall_gltf6" parent="wall3" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4041, 0, 0)
+
+[node name="wall_gltf7" parent="wall3" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29526, 0, 0)
+
+[node name="wall_gltf5" parent="wall3" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94773, 0, 0)
+
+[node name="wall_gltf8" parent="wall3" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0008, 0, 0)
+
+[node name="wall_gltf4" parent="wall3" instance=ExtResource("2_n7n0x")]
+
+[node name="wall_gltf3" parent="wall3" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.83763, 0, 0)
+
+[node name="wall4" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.56378, 0, -7.97006)
+
+[node name="wall_gltf2" parent="wall4" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96859, 0, 0)
+
+[node name="wall_gltf6" parent="wall4" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4041, 0, 0)
+
+[node name="wall_gltf7" parent="wall4" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29526, 0, 0)
+
+[node name="wall_gltf5" parent="wall4" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.94773, 0, 0)
+
+[node name="wall_gltf8" parent="wall4" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0008, 0, 0)
+
+[node name="wall_gltf4" parent="wall4" instance=ExtResource("2_n7n0x")]
+
+[node name="wall_gltf3" parent="wall4" instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.83763, 0, 0)
+
 [node name="Chao" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -8.4602)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.46)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Chao"]
 shape = SubResource("BoxShape3D_kahor")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Chao"]
-mesh = SubResource("BoxMesh_6qxrt")
+[node name="floor_dirt_large_gltf" parent="Chao" instance=ExtResource("2_88v8t")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 6.5, 0, 0, 0)
 
 [node name="Knight" parent="." instance=ExtResource("1_ycyui")]
 collision_layer = 1
@@ -37,10 +122,6 @@ collision_layer = 1
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.63334, -0.590898, 0.499719, -0.773873, -0.483593, 0.408972, 0, -0.645738, -0.763559, 16.4238, 11.9747, 3.50392)
 shadow_enabled = true
-
-[node name="wall_gltf" parent="." instance=ExtResource("2_n7n0x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.32055, 0, -9.86319)
-visible = false
 
 [node name="pillar_gltf" parent="." instance=ExtResource("3_7omtp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.39598)
@@ -54,7 +135,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.8558)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.98867, 0)
 
 [node name="Node3D2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.1209)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89958, 0, -9.95146)
 
 [node name="pillar_gltf2" parent="Node3D2" instance=ExtResource("3_7omtp")]
 
@@ -64,11 +145,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.98867, 0)
 [node name="pillar_gltf4" parent="Node3D2" instance=ExtResource("3_7omtp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.80467, 0)
 
-[node name="pillar_gltf5" parent="Node3D2" instance=ExtResource("3_7omtp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.7486, 0)
-
 [node name="coins2" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.379697, 16.5916, -33.7864)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.379697, 16.5916, -7.82864)
 script = ExtResource("4_3ralx")
 
 [node name="coin_stack_small_gltf" parent="coins2" instance=ExtResource("5_pva2q")]
@@ -86,19 +164,43 @@ script = ExtResource("6_h5s3l")
 shape = SubResource("BoxShape3D_gr4go")
 
 [node name="floor_foundation_allsides_gltf" parent="." instance=ExtResource("6_ob334")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.5571, -33.4144)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.5571, -7.87331)
 
 [node name="banner_blue_gltf" parent="." instance=ExtResource("7_qcjpg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.4116, -36.0258)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 15.4116, -5.93268)
 
-[node name="Area3D3" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.03251, 0, -4.09123)
+[node name="spikes" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74779, 0, -14.1466)
 
-[node name="coin_stack_large_gltf" parent="Area3D3" instance=ExtResource("8_pyndb")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="spikes"]
 shape = SubResource("BoxShape3D_fj3mj")
+
+[node name="floor_tile_big_spikes" parent="spikes" instance=ExtResource("9_icl7d")]
+
+[node name="spikes2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22413, 0, -5.77572)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="spikes2"]
+shape = SubResource("BoxShape3D_fj3mj")
+
+[node name="floor_tile_big_spikes" parent="spikes2" instance=ExtResource("9_icl7d")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="label_coins" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
 
 [connection signal="body_entered" from="coins2" to="coins2" method="_on_body_entered"]
 [connection signal="body_entered" from="coins" to="coins" method="_on_body_entered"]
-[connection signal="body_entered" from="Area3D3" to="Knight" method="_on_area_3d_3_body_entered_death"]
+[connection signal="body_entered" from="spikes" to="Knight" method="_on_area_3d_3_body_entered_death"]
+[connection signal="body_entered" from="spikes2" to="Knight" method="_on_area_3d_3_body_entered_death"]
