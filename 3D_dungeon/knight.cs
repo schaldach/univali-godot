@@ -48,13 +48,7 @@ public partial class knight : CharacterBody3D
 		Velocity = velocidade;
 		MoveAndSlide();
 	}
-	private void _on_area_3d_body_entered(Node3D body)
-	{
-		if(body is knight){
-			coins += 10;
-			GD.Print(coins);
-		}
-	}
+
 	private void _on_area_3d_3_body_entered_death(Node3D body)
 	{
 		if(body is knight){

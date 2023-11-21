@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://6kl6m7umiave"]
+[gd_scene load_steps=14 format=3 uid="uid://6kl6m7umiave"]
 
 [ext_resource type="PackedScene" uid="uid://dma00ivnxc7h4" path="res://knight.tscn" id="1_ycyui"]
 [ext_resource type="PackedScene" uid="uid://b7xfcdkcfurwq" path="res://KayKit_Assets/dungeon_gltf/wall.gltf.glb" id="2_n7n0x"]
 [ext_resource type="PackedScene" uid="uid://ft66qu67lfog" path="res://KayKit_Assets/dungeon_gltf/pillar.gltf.glb" id="3_7omtp"]
-[ext_resource type="Script" path="res://Area3D.cs" id="4_d8n3m"]
+[ext_resource type="Script" path="res://coins2.cs" id="4_3ralx"]
 [ext_resource type="PackedScene" uid="uid://t7r54yashvnl" path="res://KayKit_Assets/dungeon_gltf/coin_stack_small.gltf.glb" id="5_pva2q"]
+[ext_resource type="Script" path="res://coins.cs" id="6_h5s3l"]
 [ext_resource type="PackedScene" uid="uid://badswh5gqoawx" path="res://KayKit_Assets/dungeon_gltf/floor_foundation_allsides.gltf.glb" id="6_ob334"]
 [ext_resource type="PackedScene" uid="uid://chwrv70mutb1l" path="res://KayKit_Assets/dungeon_gltf/banner_blue.gltf.glb" id="7_qcjpg"]
 [ext_resource type="PackedScene" uid="uid://bybi4iywbc01u" path="res://KayKit_Assets/dungeon_gltf/coin_stack_large.gltf.glb" id="8_pyndb"]
@@ -66,22 +67,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.80467, 0)
 [node name="pillar_gltf5" parent="Node3D2" instance=ExtResource("3_7omtp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.7486, 0)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="coins2" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.379697, 16.5916, -33.7864)
-script = ExtResource("4_d8n3m")
+script = ExtResource("4_3ralx")
 
-[node name="coin_stack_small_gltf" parent="Area3D" instance=ExtResource("5_pva2q")]
+[node name="coin_stack_small_gltf" parent="coins2" instance=ExtResource("5_pva2q")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coins2"]
 shape = SubResource("BoxShape3D_gr4go")
 
-[node name="Area3D2" type="Area3D" parent="."]
+[node name="coins" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5639, 0, -2.77054)
-script = ExtResource("4_d8n3m")
+script = ExtResource("6_h5s3l")
 
-[node name="coin_stack_small_gltf" parent="Area3D2" instance=ExtResource("5_pva2q")]
+[node name="coin_stack_small_gltf" parent="coins" instance=ExtResource("5_pva2q")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coins"]
 shape = SubResource("BoxShape3D_gr4go")
 
 [node name="floor_foundation_allsides_gltf" parent="." instance=ExtResource("6_ob334")]
@@ -98,6 +99,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.03251, 0, -4.09123)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3"]
 shape = SubResource("BoxShape3D_fj3mj")
 
-[connection signal="body_entered" from="Area3D" to="Knight" method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="Area3D2" to="Knight" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="coins2" to="coins2" method="_on_body_entered"]
+[connection signal="body_entered" from="coins" to="coins" method="_on_body_entered"]
 [connection signal="body_entered" from="Area3D3" to="Knight" method="_on_area_3d_3_body_entered_death"]

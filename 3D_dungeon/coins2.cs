@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Area3D : Godot.Area3D
+public partial class coins2 : Area3D
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -16,17 +16,8 @@ public partial class Area3D : Godot.Area3D
 	private void _on_body_entered(Node3D body)
 	{
 		if(body is knight){
-			Area3D.QueueFree();
+			coins2.QueueFree();
 			body.coins += 10;
 		}
 	}
-}
-
-
-
-
-
-private void _on_body_entered(Node3D body)
-{
-	// Replace with function body.
 }
