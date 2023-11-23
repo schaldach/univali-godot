@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://6kl6m7umiave"]
+
+[ext_resource type="PackedScene" uid="uid://dma00ivnxc7h4" path="res://knight.tscn" id="1_ycyui"]
+[ext_resource type="PackedScene" uid="uid://b7xfcdkcfurwq" path="res://KayKit_Assets/dungeon_gltf/wall.gltf.glb" id="2_n7n0x"]
+[ext_resource type="PackedScene" uid="uid://0jpcbjhw7vsw" path="res://moeda.tscn" id="3_xu4i6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kahor"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6qxrt"]
+size = Vector3(60, 2, 60)
+
+[node name="Mapa1" type="Node3D"]
+
+[node name="Chao" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chao"]
+shape = SubResource("BoxShape3D_kahor")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chao"]
+mesh = SubResource("BoxMesh_6qxrt")
+
+[node name="Knight" parent="." instance=ExtResource("1_ycyui")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.63334, -0.590898, 0.499719, -0.773873, -0.483593, 0.408972, 0, -0.645738, -0.763559, 16.4238, 11.9747, 3.50392)
+shadow_enabled = true
+
+[node name="wall_gltf" parent="." instance=ExtResource("2_n7n0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.234419, 0, -9.86319)
+
+[node name="Moeda" parent="." instance=ExtResource("3_xu4i6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8)

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ft66qu67lfog"
-path="res://.godot/imported/pillar.gltf.glb-49d9bf4ddb9969f8829755042a614ba2.scn"
+uid="uid://badswh5gqoawx"
+path="res://.godot/imported/floor_foundation_allsides.gltf.glb-7001a6b918c9ec56278626fc22a00249.scn"
 
 [deps]
 
-source_file="res://KayKit_Assets/dungeon_gltf/pillar.gltf.glb"
-dest_files=["res://.godot/imported/pillar.gltf.glb-49d9bf4ddb9969f8829755042a614ba2.scn"]
+source_file="res://KayKit_Assets/dungeon_gltf/floor_foundation_allsides.gltf.glb"
+dest_files=["res://.godot/imported/floor_foundation_allsides.gltf.glb-7001a6b918c9ec56278626fc22a00249.scn"]
 
 [params]
 
@@ -28,12 +28,5 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:pillar": {
-"generate/physics": true,
-"physics/shape_type": 1
-}
-}
-}
+_subresources={}
 gltf/embedded_image_handling=1
