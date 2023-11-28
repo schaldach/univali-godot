@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://j43qidec28la"]
+
+[ext_resource type="PackedScene" uid="uid://b2iynuinc3fy" path="res://KayKit_Assets/dungeon_gltf/keg_decorated.gltf.glb" id="1_xnffu"]
+[ext_resource type="PackedScene" uid="uid://dlq51ek16px02" path="res://KayKit_Assets/dungeon_gltf/stairs_wood_decorated.gltf.glb" id="2_16bk0"]
+[ext_resource type="PackedScene" uid="uid://bxlklx30uct25" path="res://KayKit_Assets/dungeon_gltf/pillar_decorated.gltf.glb" id="3_1ew56"]
+[ext_resource type="PackedScene" uid="uid://c75s1cnbv1b3w" path="res://KayKit_Assets/dungeon_gltf/barrel_large_decorated.gltf.glb" id="4_8o0tr"]
+[ext_resource type="PackedScene" uid="uid://wsvabyp4s2r2" path="res://KayKit_Assets/dungeon_gltf/bed_decorated.gltf.glb" id="5_pq82b"]
+[ext_resource type="PackedScene" uid="uid://b5hus6srs14j" path="res://KayKit_Assets/dungeon_gltf/table_medium.gltf.glb" id="6_rotqh"]
+[ext_resource type="PackedScene" uid="uid://bos0xfixhm20w" path="res://KayKit_Assets/dungeon_gltf/torch_mounted.gltf.glb" id="7_8yvbf"]
+
+[node name="GridMap" type="Node3D"]
+
+[node name="keg_decorated_gltf" parent="." instance=ExtResource("1_xnffu")]
+
+[node name="stairs_wood_decorated_gltf" parent="." instance=ExtResource("2_16bk0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -5)
+
+[node name="pillar_decorated_gltf" parent="." instance=ExtResource("3_1ew56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="barrel_large_decorated_gltf" parent="." instance=ExtResource("4_8o0tr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="bed_decorated_gltf" parent="." instance=ExtResource("5_pq82b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -1)
+
+[node name="table_medium_gltf" parent="." instance=ExtResource("6_rotqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -1)
+
+[node name="torch_mounted_gltf" parent="." instance=ExtResource("7_8yvbf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)

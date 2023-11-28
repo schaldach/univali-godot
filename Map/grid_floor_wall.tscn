@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://cn7wqnqhwwk6a"]
+
+[ext_resource type="PackedScene" uid="uid://b7xfcdkcfurwq" path="res://KayKit_Assets/dungeon_gltf/wall.gltf.glb" id="1_ccjs2"]
+[ext_resource type="PackedScene" uid="uid://smrre418np4o" path="res://KayKit_Assets/dungeon_gltf/wall_corner_small.gltf.glb" id="2_iq8f7"]
+[ext_resource type="PackedScene" uid="uid://d26fctd14ubu" path="res://KayKit_Assets/dungeon_gltf/floor_tile_small.gltf.glb" id="3_xrckr"]
+[ext_resource type="PackedScene" uid="uid://badswh5gqoawx" path="res://KayKit_Assets/dungeon_gltf/floor_foundation_allsides.gltf.glb" id="4_81w1r"]
+[ext_resource type="PackedScene" uid="uid://ct88xeo2qwi3u" path="res://KayKit_Assets/dungeon_gltf/wall_gated.gltf.glb" id="5_16g4x"]
+[ext_resource type="PackedScene" uid="uid://wrbmasbpt21b" path="res://KayKit_Assets/dungeon_gltf/wall_half.gltf.glb" id="6_ujo1n"]
+
+[node name="GridMap" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3)
+
+[node name="wall_gltf" parent="." instance=ExtResource("1_ccjs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.354309, 0, 0.0845945)
+
+[node name="wall_corner_small_gltf" parent="." instance=ExtResource("2_iq8f7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="floor_tile_small_gltf" parent="." instance=ExtResource("3_xrckr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1)
+
+[node name="floor_foundation_allsides_gltf" parent="." instance=ExtResource("4_81w1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1)
+
+[node name="wall_gated_gltf" parent="." instance=ExtResource("5_16g4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="wall_half_gltf" parent="." instance=ExtResource("6_ujo1n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)

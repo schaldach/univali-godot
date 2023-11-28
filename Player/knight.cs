@@ -83,7 +83,7 @@ public partial class knight : CharacterBody3D
 		arvore_animacao.Set("parameters/IWR/blend_position", new Vector2(vm.X, -vm.Z)/aceleracao);
 
 	}
-	public void PegouMoeda(int m) {
+	public void addCoins(int m) {
 		coins += m;
 	}
 
