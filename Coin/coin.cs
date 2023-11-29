@@ -24,4 +24,8 @@ public partial class coin : Area3D
 			QueueFree();
 		}
 	}
+	
+	public void change_position(){
+		GlobalPosition = new Vector3(-3,1,-4);
+	}
 }
