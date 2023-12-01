@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b07bxo5vxb2vf"]
+[gd_scene load_steps=10 format=3 uid="uid://b07bxo5vxb2vf"]
 
 [ext_resource type="PackedScene" uid="uid://ctg84qdxycikc" path="res://Map/map1.tscn" id="1_5bfdu"]
 [ext_resource type="PackedScene" uid="uid://dma00ivnxc7h4" path="res://Player/knight.tscn" id="2_inbkr"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c3tibwj618hhw" path="res://Coin/coin.tscn" id="4_xwfvk"]
 [ext_resource type="PackedScene" uid="uid://cs5b8aiiptcp0" path="res://Lever/lever.tscn" id="5_xf84v"]
 [ext_resource type="PackedScene" uid="uid://di0n7rjosc3ib" path="res://wall_doorway.tscn" id="6_nybin"]
+[ext_resource type="PackedScene" uid="uid://cvfmxv1bw5nc0" path="res://KayKit_Assets/dungeon_gltf/floor_tile_small_broken_B.gltf.glb" id="7_ce3yn"]
+[ext_resource type="PackedScene" uid="uid://cfln4swug7sgr" path="res://Map/map2.tscn" id="8_mmmmd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b4f26"]
 size = Vector3(15, 4, 1)
@@ -104,7 +106,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.83, -14)
 
 [node name="Coin" parent="." instance=ExtResource("4_xwfvk")]
 unique_name_in_owner = true
-transform = Transform3D(0.966604, 0.235196, -0.101782, -0.231254, 0.971654, 0.0491027, 0.110446, -0.0239253, 0.993594, 0, 7, -45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -49.3275)
 
 [node name="Lever" parent="." instance=ExtResource("5_xf84v")]
 transform = Transform3D(0.999999, -0.00127235, 0.000940876, 0.00127288, 0.999999, -0.000550042, -0.000940162, 0.000551262, 0.999999, 5, 6, -49)
@@ -115,3 +117,9 @@ transform = Transform3D(0.999999, -0.00127235, 0.000940876, 0.00127288, 0.999999
 [node name="wall_doorway" parent="." instance=ExtResource("6_nybin")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+
+[node name="floor_tile_small_broken_B_gltf" parent="." instance=ExtResource("7_ce3yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 6, -43)
+
+[node name="Map2" parent="." instance=ExtResource("8_mmmmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.00866, -11.7003, -43.6102)
