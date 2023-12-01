@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://di0n7rjosc3ib"]
+
+[ext_resource type="PackedScene" uid="uid://blgjptaoleygj" path="res://KayKit_Assets/dungeon_gltf/wall_doorway.glb" id="1_2xiyp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u2uan"]
+size = Vector3(1, 4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8xgt8"]
+size = Vector3(4, 1.15, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vbsdx"]
+size = Vector3(1, 4, 1)
+
+[node name="wall_doorway" instance=ExtResource("1_2xiyp")]
+
+[node name="CollisionShape3D" parent="wall_doorway2/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50469, 2.01263, 0)
+shape = SubResource("BoxShape3D_u2uan")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wall_doorway2/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.43135, 0)
+shape = SubResource("BoxShape3D_8xgt8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="wall_doorway2/StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50868, 2, 0)
+shape = SubResource("BoxShape3D_vbsdx")

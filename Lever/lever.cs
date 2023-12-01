@@ -6,12 +6,12 @@ public partial class lever : Area3D
 	private bool inside = false;
 	private bool pressed = false;
 	private Node3D axe;
-	private Area3D coinRef;
+	private Node3D door;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		axe = GetNode<Node3D>("axe");
-		coinRef = GetNode<Area3D>("%Coin");
+		door = GetNode<Node3D>("%wall_doorway/wall_doorway2/wall_doorway_door");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,7 +19,7 @@ public partial class lever : Area3D
 	{
 		if(Input.IsActionJustPressed("interaction") && inside && !pressed){
 			axe.RotateZ(60*(3.1415f/180));
-			((coin)(coinRef)).change_position();
+			door.RotateY(90*(3.1415f/180));
 			pressed = true;
 		}
 	}
@@ -35,10 +35,6 @@ public partial class lever : Area3D
 	{
 		if(body is knight){
 			inside = false;
-			if(pressed){
-				axe.RotateZ(-60*(3.1415f/180));
-			}
-			pressed = false;
 		}
 	}
 }
