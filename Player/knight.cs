@@ -23,7 +23,7 @@ public partial class knight : CharacterBody3D
 		estado_animacao = (AnimationNodeStateMachinePlayback)arvore_animacao.Get("parameters/playback");
 	}
 	public void Morrer(){
-		//GlobalPosition = new Vector3(0,0,0);
+		GlobalPosition = new Vector3(0,0,0);
 		GD.Print("Você morreu.");
 	}
 	public override void _PhysicsProcess(double delta)
