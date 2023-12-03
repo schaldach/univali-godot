@@ -5,7 +5,7 @@ using System.Diagnostics;
 public partial class knight : CharacterBody3D
 {
 	[Export] private float aceleracao=5.0f, altura_pulo=4.5f, gravidade=5f;
-	private float jump_counter=0, coins=0;
+	private float jump_counter=0, coins=0, lifes=3;
 	private Vector3 velocidade;
 	private bool last_floor = true;
 
@@ -24,6 +24,11 @@ public partial class knight : CharacterBody3D
 	}
 	public void Morrer(){
 		GlobalPosition = new Vector3(0,0,0);
+		lifes = lifes-1;
+		GetNode<Label>("%LabelHealth").Text = "Vidas " + lifes.ToString() + "/3";
+		if(lifes == 0){
+			GetTree().ChangeSceneToFile("main_menu.tscn");
+		}
 		GD.Print("Você morreu.");
 	}
 	public override void _PhysicsProcess(double delta)
@@ -85,6 +90,7 @@ public partial class knight : CharacterBody3D
 	}
 	public void addCoins(int m) {
 		coins += m;
+		GetNode<Label>("%LabelCoins").Text = "Moedas " + coins.ToString() + "/9";
 	}
 
 }

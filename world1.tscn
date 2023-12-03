@@ -104,3 +104,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.936568, -43)
 
 [node name="ChangeMapTrigger2" parent="." instance=ExtResource("8_jogq6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32203, 0.0500002, 2.76135)
+
+[node name="LabelHealth" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 85.0
+offset_bottom = 35.0
+text = "Vidas 3/3"
+
+[node name="LabelCoins" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 14.0
+offset_top = 41.0
+offset_right = 85.0
+offset_bottom = 64.0
+text = "Moedas 0/9"
