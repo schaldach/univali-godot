@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://4yunddlaqqtg"]
+
+[ext_resource type="Script" path="res://credits.cs" id="1_wg6kx"]
+[ext_resource type="Texture2D" uid="uid://bwe6sp0i40k0e" path="res://Criado por.png" id="2_lkajs"]
+
+[node name="CreditMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -77.0
+offset_right = -918.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 0
+script = ExtResource("1_wg6kx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.5
+offset_top = -50.5
+offset_right = 101.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="CriadoPor" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, -245)
+scale = Vector2(0.597917, 0.598148)
+texture = ExtResource("2_lkajs")
+
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="3D Dungeon"
-run/main_scene="res://world1.tscn"
+run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameS="*res://GameS.cs"
 
 [dotnet]
 

@@ -7,7 +7,7 @@ public partial class MainMenu : Control
 		GetTree().ChangeSceneToFile("world1.tscn");
 	}
 	public void _on_credits_pressed(){
-		
+		GetTree().ChangeSceneToFile("credits.tscn");
 	}
 	public void _on_exit_pressed(){
 		GetTree().Quit();

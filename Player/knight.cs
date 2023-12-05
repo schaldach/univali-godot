@@ -5,9 +5,12 @@ using System.Diagnostics;
 public partial class knight : CharacterBody3D
 {
 	[Export] private float aceleracao=5.0f, altura_pulo=4.5f, gravidade=5f;
-	private float jump_counter=0, coins=0, lifes=3;
+	private int jump_counter=0; 
+	public int coins, lifes;
 	private Vector3 velocidade;
 	private bool last_floor = true;
+	public bool pause = false;
+	public GameS MainS;
 
 	//Variáveis de animação e câmera
 	[Export] private float sensibilidade = 0.5f;
@@ -17,6 +20,15 @@ public partial class knight : CharacterBody3D
 	private AnimationNodeStateMachinePlayback estado_animacao;
 
 	public override void _Ready() {
+		MainS = GetNode<GameS>("/root/GameS");
+		lifes = MainS.player_lifes;
+		coins = MainS.player_coins;
+		jump_counter = MainS.jump_controler;
+		pause = MainS.game_pause;
+		if(pause){
+			GlobalPosition = new Vector3(MainS.player_x, MainS.player_y, MainS.player_z);
+		}
+		pause = false;
 		pau_selfie = GetNode<SpringArm3D>("SpringArm3D");
 		modelo = GetNode<Node3D>("Rig");
 		arvore_animacao = GetNode<AnimationTree>("AnimationTree");
@@ -25,8 +37,8 @@ public partial class knight : CharacterBody3D
 	public void Morrer(){
 		GlobalPosition = new Vector3(0,0,0);
 		lifes = lifes-1;
-		GetNode<Label>("%LabelHealth").Text = "Vidas " + lifes.ToString() + "/3";
 		if(lifes == 0){
+			MainS.reset();
 			GetTree().ChangeSceneToFile("main_menu.tscn");
 		}
 		GD.Print("Você morreu.");
@@ -34,6 +46,7 @@ public partial class knight : CharacterBody3D
 	public override void _PhysicsProcess(double delta)
 	{
 		velocidade = Velocity;
+
 		
 		// Abismo
 		if(GlobalPosition.Y<-5){
@@ -62,10 +75,22 @@ public partial class knight : CharacterBody3D
 			}
 		}
 
+		if (Input.IsActionJustPressed("ESC")){
+			pause = true;
+			passTroughScene();
+			GetTree().ChangeSceneToFile("pause_menu.tscn");
+		}
+
 		Movimento(delta);
 		Animacao();
 		Velocity = velocidade;
 		MoveAndSlide();
+		GetNode<Label>("%LabelHealth").Text = "Vidas " + lifes.ToString() + "/3";
+		GetNode<Label>("%LabelCoins").Text = "Moedas " + coins.ToString() + "/2";
+		if (coins == 2){
+			MainS.reset();
+			GetTree().ChangeSceneToFile("main_menu.tscn");
+		}
 
 	}
 
@@ -90,7 +115,17 @@ public partial class knight : CharacterBody3D
 	}
 	public void addCoins(int m) {
 		coins += m;
-		GetNode<Label>("%LabelCoins").Text = "Moedas " + coins.ToString() + "/9";
 	}
 
+	public void passTroughScene(){
+		MainS.player_lifes = lifes;
+		MainS.player_coins = coins;
+		MainS.game_pause = pause;
+		MainS.jump_controler = jump_counter;
+		if (pause){
+			MainS.player_x = GlobalPosition.X;
+			MainS.player_y = GlobalPosition.Y;
+			MainS.player_z = GlobalPosition.Z;
+		}
+	}
 }

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://foq08ns0c0c8"]
+[gd_scene load_steps=7 format=3 uid="uid://foq08ns0c0c8"]
 
 [ext_resource type="PackedScene" uid="uid://cfln4swug7sgr" path="res://Map/map2.tscn" id="1_pwo4a"]
 [ext_resource type="PackedScene" uid="uid://dma00ivnxc7h4" path="res://Player/knight.tscn" id="2_y4x7g"]
 [ext_resource type="PackedScene" uid="uid://di0n7rjosc3ib" path="res://Lever_Door/wall_doorway.tscn" id="3_tpd0f"]
 [ext_resource type="PackedScene" uid="uid://cs5b8aiiptcp0" path="res://Lever_Door/lever.tscn" id="4_3ifin"]
 [ext_resource type="PackedScene" uid="uid://c3tibwj618hhw" path="res://Coin/coin.tscn" id="5_5cgm2"]
+[ext_resource type="PackedScene" uid="uid://clloot1wor38c" path="res://Death Area/death_area.tscn" id="6_yj3ws"]
 
 [node name="word2" type="Node3D"]
 
@@ -23,3 +24,22 @@ transform = Transform3D(0.999999, -0.00127235, 0.000940876, 0.00127288, 0.999999
 [node name="Coin" parent="." instance=ExtResource("5_5cgm2")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -3, -15)
+
+[node name="LabelHealth" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 85.0
+offset_bottom = 35.0
+text = "Vidas 3/3"
+
+[node name="LabelCoins" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 14.0
+offset_top = 41.0
+offset_right = 85.0
+offset_bottom = 64.0
+text = "Moedas 0/9"
+
+[node name="death_area" parent="." instance=ExtResource("6_yj3ws")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.25849, -0.158202, -9)

@@ -3,14 +3,23 @@ using System;
 
 public partial class coin : Area3D
 {
+
+	public bool coin_status = true;
+	GameS MainS;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		MainS = GetNode<GameS>("/root/GameS");
+		coin_status = MainS.coin_controler;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		if(!coin_status){
+			QueueFree();
+		}
 	}
 
 	private void _on_body_entered(Node3D body){
@@ -21,6 +30,8 @@ public partial class coin : Area3D
 				((knight)(body)).Morrer();
 			}
 			((knight)(body)).addCoins(1);
+			coin_status = false;
+			MainS.coin_controler = coin_status;
 			QueueFree();
 		}
 	}
