@@ -8,6 +8,7 @@ public partial class lever : Area3D
 	private Node3D axe;
 	private Node3D door;
 	public GameS MainS;
+	private float frame_counter=0;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -17,6 +18,7 @@ public partial class lever : Area3D
 		if (MainS.door_controler){
 			axe.RotateZ(60*(3.1415f/180));
 			door.RotateY(90*(3.1415f/180));
+			frame_counter = 30;
 			pressed = true;
 			MainS.door_controler = true;
 		}
@@ -25,9 +27,12 @@ public partial class lever : Area3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		if(pressed && frame_counter<30){
+			axe.RotateZ(2*(3.1415f/180));
+			door.RotateY(3*(3.1415f/180));
+			frame_counter++;
+		}
 		if(Input.IsActionJustPressed("interaction") && inside && !pressed){
-			axe.RotateZ(60*(3.1415f/180));
-			door.RotateY(90*(3.1415f/180));
 			pressed = true;
 			MainS.door_controler = true;
 		}
